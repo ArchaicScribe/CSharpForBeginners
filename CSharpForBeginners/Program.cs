@@ -81,14 +81,26 @@ namespace CSharpFundamentals
             //{
             //    Console.WriteLine(number);
             //}
-            var i = 0;
-            while(i <= 10)
+            //var i = 0;
+            //while(i <= 10)
+            //{
+            //    if (i % 2 == 0)
+            //    {
+            //        Console.WriteLine(i);
+            //        i++;
+            //    }
+            //}
+            while (true)
             {
-                if (i % 2 == 0)
+                Console.Write("Type your name: ");
+                var userinput = Console.ReadLine();
+
+                if (!String.IsNullOrWhiteSpace(userinput))
                 {
-                    Console.WriteLine(i);
-                    i++;
+                    Console.WriteLine("@Echo: " + userinput);
+                    continue; 
                 }
+                break;
             }
 
         }
