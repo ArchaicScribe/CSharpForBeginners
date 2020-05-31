@@ -12,50 +12,94 @@ namespace CSharpFundamentals
 
         public static void Main(string[] args)
         {
-            var numbers = new [] { 3, 7, 9, 2, 14, 6 };
+            var numbers = new List<int>() { 1, 2, 3, 4 };
+            numbers.Add(1);
+            numbers.Add(1);
+            numbers.AddRange(new int[8] {4536425,45556, 1231547,3, 54122, 52, 1, 1245});
 
-            //Length
-            Console.WriteLine("Length of the array is: " + numbers.Length);
-
-            //IndexOF
-            var index = Array.IndexOf(numbers, 9);
-            Console.WriteLine("The index of 9 is: " + index);
-
-            //Clear Method
-            Array.Clear(numbers, 0, 2);
-            Console.WriteLine("This is the effect of the Clear()");
-            foreach(var n in numbers)
-            {
-                Console.WriteLine(n);
-            }
-
-            //Copy()
-            int[] otherArray = new int[3];
-            Array.Copy(numbers, otherArray, 3);
-
-            Console.WriteLine("The effect of Copy()");
-            foreach (var n  in otherArray)
-            {
-                Console.WriteLine(n);
-            }
-
-            //Sort()
-            Array.Sort(numbers);
-
-            Console.WriteLine("This is an example of the Sort()");
             foreach (var n in numbers)
             {
                 Console.WriteLine(n);
             }
 
-            //Reverse
-            Array.Reverse(numbers);
+            Console.WriteLine("The Index of 3 is: " + numbers.IndexOf(3));
+            Console.WriteLine("The Last Index of 3 is: " + numbers.LastIndexOf(3));
 
-            Console.WriteLine("This is an example of the Reverse()");
-            foreach(var n in numbers)
+            Console.WriteLine("Count: " + numbers.Count);
+            numbers.Add(1);
+            numbers.Add(1);
+            numbers.Add(1);
+
+
+            for (int i = 0; i < numbers.Count; i++){
+                if (numbers[i] == 1)
+                {
+                    numbers.Remove(numbers[i]);
+                }
+            }
+           
+
+
+            numbers.Remove(3);
+            foreach (var n in numbers)
             {
                 Console.WriteLine(n);
             }
+
+            Console.WriteLine("Removes ranges, starting at Index [3]. This is the result.");
+            numbers.RemoveRange(3, 4);
+            foreach (var n in numbers)
+            {
+                Console.WriteLine(n);
+            }
+
+            //int a = default(int);
+            //Console.WriteLine("The value of a is: " + a);
+
+            //var numbers = new [] { 3, 7, 9, 2, 14, 6 };
+
+            ////Length
+            //Console.WriteLine("Length of the array is: " + numbers.Length);
+
+            ////IndexOF
+            //var index = Array.IndexOf(numbers, 9);
+            //Console.WriteLine("The index of 9 is: " + index);
+
+            ////Clear Method
+            //Array.Clear(numbers, 0, 2);
+            //Console.WriteLine("This is the effect of the Clear()");
+            //foreach(var n in numbers)
+            //{
+            //    Console.WriteLine(n);
+            //}
+
+            ////Copy()
+            //int[] otherArray = new int[3];
+            //Array.Copy(numbers, otherArray, 3);
+
+            //Console.WriteLine("The effect of Copy()");
+            //foreach (var n  in otherArray)
+            //{
+            //    Console.WriteLine(n);
+            //}
+
+            ////Sort()
+            //Array.Sort(numbers);
+
+            //Console.WriteLine("This is an example of the Sort()");
+            //foreach (var n in numbers)
+            //{
+            //    Console.WriteLine(n);
+            //}
+
+            ////Reverse
+            //Array.Reverse(numbers);
+
+            //Console.WriteLine("This is an example of the Reverse()");
+            //foreach(var n in numbers)
+            //{
+            //    Console.WriteLine(n);
+            //}
 
         }
         //public static bool DivByThree(int a, int b)

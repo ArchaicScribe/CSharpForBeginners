@@ -5,7 +5,6 @@ namespace CrackingTheCI
 {
     class Program
     {
-       
 
         static void Main(string[] args)
         {
@@ -13,6 +12,7 @@ namespace CrackingTheCI
             int[] test123 = new int[] { 12, 32, 33, 64, 75, 46, 42, 32 };
             int occurrences = test123.Count(i => i == chiffrebase);
             Console.WriteLine(occurrences);
+           
 
         }
         public int nbOccurrences(int[] base1, int n)
