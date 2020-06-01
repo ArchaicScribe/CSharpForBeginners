@@ -12,46 +12,66 @@ namespace CSharpFundamentals
 
         public static void Main(string[] args)
         {
-            var numbers = new List<int>() { 1, 2, 3, 4 };
-            numbers.Add(1);
-            numbers.Add(1);
-            numbers.AddRange(new int[8] {4536425,45556, 1231547,3, 54122, 52, 1, 1245});
 
-            foreach (var n in numbers)
-            {
-                Console.WriteLine(n);
-            }
+            var dateTime = new DateTime(2020, 1, 1);
+            var now = DateTime.Now;
+            var today = DateTime.Today;
 
-            Console.WriteLine("The Index of 3 is: " + numbers.IndexOf(3));
-            Console.WriteLine("The Last Index of 3 is: " + numbers.LastIndexOf(3));
+            Console.WriteLine("This is the hour: " + now.Hour);
+            Console.WriteLine("This is the minute: " + now.Minute);
+            Console.WriteLine("This is the second: " + now.Second);
 
-            Console.WriteLine("Count: " + numbers.Count);
-            numbers.Add(1);
-            numbers.Add(1);
-            numbers.Add(1);
+            var tomorrow = now.AddDays(1);
+            var yesterday = now.AddDays(-1);
+
+            Console.WriteLine("This will give the full details of today's date: " + now.ToLongDateString());
+            Console.WriteLine("This will display an abbreviated version of today's date: " + now.ToShortDateString());
+            Console.WriteLine("This is the short display of today's time: " + now.ToShortTimeString());
+            Console.WriteLine("This is the long display of today's time: " + now.ToLongTimeString());
+            Console.WriteLine("This will display the time and date: " + now.ToString("yyyy-MM-dd HH:mm:ss"));
 
 
-            for (int i = 0; i < numbers.Count; i++){
-                if (numbers[i] == 1)
-                {
-                    numbers.Remove(numbers[i]);
-                }
-            }
+
+            //var numbers = new List<int>() { 1, 2, 3, 4 };
+            //numbers.Add(1);
+            //numbers.Add(1);
+            //numbers.AddRange(new int[8] {4536425,45556, 1231547,3, 54122, 52, 1, 1245});
+
+            //foreach (var n in numbers)
+            //{
+            //    Console.WriteLine(n);
+            //}
+
+            //Console.WriteLine("The Index of 3 is: " + numbers.IndexOf(3));
+            //Console.WriteLine("The Last Index of 3 is: " + numbers.LastIndexOf(3));
+
+            //Console.WriteLine("Count: " + numbers.Count);
+            //numbers.Add(1);
+            //numbers.Add(1);
+            //numbers.Add(1);
+
+
+            //for (int i = 0; i < numbers.Count; i++){
+            //    if (numbers[i] == 1)
+            //    {
+            //        numbers.Remove(numbers[i]);
+            //    }
+            //}
            
 
 
-            numbers.Remove(3);
-            foreach (var n in numbers)
-            {
-                Console.WriteLine(n);
-            }
+            //numbers.Remove(3);
+            //foreach (var n in numbers)
+            //{
+            //    Console.WriteLine(n);
+            //}
 
-            Console.WriteLine("Removes ranges, starting at Index [3]. This is the result.");
-            numbers.RemoveRange(3, 4);
-            foreach (var n in numbers)
-            {
-                Console.WriteLine(n);
-            }
+            //Console.WriteLine("Removes ranges, starting at Index [3]. This is the result.");
+            //numbers.RemoveRange(3, 4);
+            //foreach (var n in numbers)
+            //{
+            //    Console.WriteLine(n);
+            //}
 
             //int a = default(int);
             //Console.WriteLine("The value of a is: " + a);
