@@ -11,27 +11,17 @@ namespace CSharpFundamentals
 
         public static void Main(string[] args)
         {
+            Console.WriteLine("What is your name? ");
+            var userName = Console.ReadLine();
 
-            var builder = new StringBuilder("Hello, World");
-            builder
-                .Append('-', 10)
-                .AppendLine()
-                .Append("Header")
-                .AppendLine()
-                .Append('-', 10)
-                .Replace('-', '+')
-                .Remove(0, 10)
-                .Insert(0, new string('-', 10));
-            Console.WriteLine(builder);
-            Console.WriteLine("First Char: " + builder[0]);
-
-
-
-            //var sentence = "This is going to be a really really really really really really really long text";
-            //var summary = StringUtility.SummerizeText(sentence);
-            //Console.WriteLine(summary);
-
-         }
+            var nameArray = new char[userName.Length];
+            for(var i = userName.Length; i > 0; i--)
+            {
+                nameArray[userName.Length - 1] = userName[i - 1];
+            }
+            var reversedName = new string(nameArray);
+            Console.WriteLine("Your name reversed is: " + reversedName);
+        }
         
     }
 }
