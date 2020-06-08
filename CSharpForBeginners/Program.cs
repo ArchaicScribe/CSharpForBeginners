@@ -22,17 +22,23 @@ namespace CSharpFundamentals
                     break;
                 numbers.Add(Convert.ToInt32(userInput));
             }
+            
+            Console.WriteLine("Unique numbers:");
+            foreach(var number in RetrieveUniqueNums(numbers))
+            {
+                Console.WriteLine(number);
+            }
+        }
+        public static List<int> RetrieveUniqueNums(List<int> numbers)
+        {
             var uniques = new List<int>();
-            foreach(var number in numbers)
+            foreach (var number in numbers)
             {
                 if (!uniques.Contains(number))
                     uniques.Add(number);
             }
-            Console.WriteLine("Unique numbers:");
-            foreach(var number in uniques)
-            {
-                Console.WriteLine(number);
-            }
+
+            return uniques;
         }
         
     }
