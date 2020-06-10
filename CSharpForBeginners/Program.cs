@@ -1,6 +1,7 @@
 ﻿using CSharpForBeginners;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 
 namespace CSharpFundamentals
@@ -12,35 +13,25 @@ namespace CSharpFundamentals
 
         public static void Main(string[] args)
         {
-            var numbers = new List<int>();
-            while (true)
-            {
-                Console.WriteLine("Please enter a number (or 'Quit' to exit): ");
-                var userInput = Console.ReadLine();
+            var path = @"c:\somefile.jpg";
 
-                if (userInput.ToLower() == "quit")
-                    break;
-                numbers.Add(Convert.ToInt32(userInput));
-            }
-            
-            Console.WriteLine("Unique numbers:");
-            foreach(var number in RetrieveUniqueNums(numbers))
+
+            File.Copy(@"c:\temp\myfile.jpg", @"d:\temp\myfile.jpg", true);
+            File.Delete(path);
+            if (File.Exists(path))
             {
-                Console.WriteLine(number);
+                //
+            }
+            var content = File.ReadAllText(path);
+
+            var fileInfo = new FileInfo(path);
+            fileInfo.CopyTo("....");
+            fileInfo.Delete();
+            if (fileInfo.Exists)
+            {
+                //
             }
         }
-        public static List<int> RetrieveUniqueNums(List<int> numbers)
-        {
-            var uniques = new List<int>();
-            foreach (var number in numbers)
-            {
-                if (!uniques.Contains(number))
-                    uniques.Add(number);
-            }
-
-            return uniques;
-        }
-        
     }
 }
 
