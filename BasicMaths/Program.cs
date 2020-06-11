@@ -6,26 +6,24 @@ namespace BasicMaths
     {
         static void Main(string[] args)
         {
-            Counter(63);
+            var setValue = 63;
+            Random random = new Random();
+            int randomValue = random.Next(1,100);
+            var players = 4;
+            var offset = 1;
             
-            
-            SecondCounter(97);
-            
-        }
 
-        public static void Counter(int number)
+            Console.WriteLine("The set value is " + setValue);
+            Console.WriteLine("The starting player is: " + SelectStartingPlayer(setValue, players, offset) + " Congrats.");
+            Console.WriteLine("The next player, selected at random is: " + randomValue);
+            Console.WriteLine("That player is player: " + SelectStartingPlayer(setValue, players, offset) + " Congrats.");
+
+        }
+        private static int SelectStartingPlayer(int setValue, int players, int offset)
         {
-           
-            var remainder = number % 4;
-            Console.WriteLine(remainder);
+            return (setValue % players) + offset;
         }
 
-        public static void SecondCounter(int number)
-        {
-           
-            var secondResult = number % 4;
-            Console.WriteLine(secondResult);
-
-        }
+       
     }
 }
