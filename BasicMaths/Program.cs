@@ -12,7 +12,7 @@ namespace BasicMaths
             int randomValue = random.Next(1,100);
             var players = 4;
             var offset = 1;
-            ExponentialPower(2, 24);
+            
             
 
             Console.WriteLine("The set value is " + setValue);
@@ -20,6 +20,8 @@ namespace BasicMaths
             Console.WriteLine("The next player, selected at random is: " + randomValue);
             Console.WriteLine("That player is player: " + SelectStartingPlayer(setValue, players, offset) + " Congrats.");
             Console.WriteLine(ExponentialPower(2, 24));
+            Console.WriteLine(ExponentialPower(2.5, 2));
+            Console.WriteLine(ExponentialPower(3.5, 2));
         }
         private static int SelectStartingPlayer(int setValue, int players, int offset)
         {
